@@ -8,7 +8,7 @@ nltk.download('punkt')
 import streamlit as st
 import nltk
 from nltk.corpus import stopwords
-from nltk.stem import 	WordNetLemmatizer
+from nltk.stem import WordNetLemmatizer
 nltk.download("wordnet")
 nltk.download("brown")
 nltk.download('averaged_perceptron_tagger') 
