@@ -24,13 +24,13 @@ def sumy_summarize(docx):
     return result
 
 if st.sidebar.checkbox("NLP"):
-    st.text_area("Enter text")
+    text1=st.text_area("Enter text")
     blob = TextBlob(text1)
     if st.checkbox('Noun phrases'):
         st.write(blob.noun_phrases)
     if st.checkbox("show sentiment analysis"):
         st.subheader("analyse your text")
-        message=st.text_area("Enter your text")  
+#         message=st.text_area("Enter your text")  
         if st.button("Analyse"):
             blob = TextBlob(text1)
             result_sentiment= blob.sentiment
@@ -41,11 +41,10 @@ if st.sidebar.checkbox("NLP"):
     if st.checkbox("show words"):         
         st.write (blob.words)
     if st.checkbox("show sentence"):    
-        blob.sentences
+        st.write(blob.sentences)
     if st.checkbox("lemmatizer"):
-        word1= st.text_area('Enter number:')
-        st.write(Word(word1).lemmatize("v"))
-        st.write(word1.lemmatize("v"))
+        st.write(Word(text1).lemmatize("v"))
+#         st.write(word1.lemmatize("v"))
     if st.checkbox("show text summarization"):
         st.subheader("summarize your text")
         message = st.text_area("Enter text ","Type here...")
