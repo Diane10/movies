@@ -22,8 +22,8 @@ def sumy_summarize(docx):
     summary_list=[str(sentence) for sentence in summary]
     result=' '.join(summary_list)
     return result
-text1 =st.text_area("Enter text")
-blob = TextBlob(text1)
+# text =st.text_area("Enter text")
+# blob = TextBlob(text)
 if st.sidebar.checkbox("NLP"):
     if st.checkbox('Noun phrases'):
 #         text1 =st.text_area("Enter text")
@@ -44,7 +44,7 @@ if st.sidebar.checkbox("NLP"):
     if st.checkbox("show sentence"):    
         st.write(blob.sentences)
     if st.checkbox("lemmatizer"):
-        st.write(Word(text1).lemmatize("v"))
+#         st.write(Word(text1).lemmatize("v"))
 #         st.write(word1.lemmatize("v"))
     if st.checkbox("show text summarization"):
         st.subheader("summarize your text")
