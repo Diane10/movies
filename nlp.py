@@ -9,8 +9,6 @@ import streamlit as st
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem import 	WordNetLemmatizer
-
-
 nltk.download("wordnet")
 nltk.download("brown")
 nltk.download('averaged_perceptron_tagger') 
@@ -95,7 +93,7 @@ if st.sidebar.checkbox("NLP"):
         selection = st.selectbox("Select type:", ("Lemmatizer", "PorterStemmer"))
         if st.button("Analyse",key="6"):
             if selection == "Lemmatizer":
-		wordnet_lemmatizer = WordNetLemmatizer()
+		wordnet_lemmatizer=WordNetLemmatizer()
                 tokenization=nltk.word_tokenize(message)
                 for w in tokenization:
                     st.write("Lemma for {} is {}".format(w,wordnet_lemmatizer.lemmatize(w))) 
