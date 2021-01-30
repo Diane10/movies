@@ -24,11 +24,10 @@ def sumy_summarize(docx):
     return result
 
 if st.sidebar.checkbox("NLP"):
-    
     if st.checkbox('Noun phrases'):
-        text1=st.text_area("Enter text")
-        blob = TextBlob(text1)
-        st.write(blob.noun_phrases)
+#         text1 =st.text_area("Enter text")
+#         blob = TextBlob(text1)
+#         st.write(blob.noun_phrases)
     if st.checkbox("show sentiment analysis"):
         st.subheader("analyse your text")
 #         message=st.text_area("Enter your text")  
