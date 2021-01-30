@@ -22,7 +22,8 @@ def sumy_summarize(docx):
     summary_list=[str(sentence) for sentence in summary]
     result=' '.join(summary_list)
     return result
-
+text1 =st.text_area("Enter text")
+blob = TextBlob(text1)
 if st.sidebar.checkbox("NLP"):
     if st.checkbox('Noun phrases'):
 #         text1 =st.text_area("Enter text")
@@ -30,9 +31,9 @@ if st.sidebar.checkbox("NLP"):
 #         st.write(blob.noun_phrases)
     if st.checkbox("show sentiment analysis"):
         st.subheader("analyse your text")
-#         message=st.text_area("Enter your text")  
+        message=st.text_area("Enter your text")  
         if st.button("Analyse"):
-            blob = TextBlob(text1)
+            blob = TextBlob(message)
             result_sentiment= blob.sentiment
             st.success(result_sentiment)
             polarity = blob.polarity
