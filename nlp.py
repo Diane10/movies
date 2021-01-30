@@ -21,11 +21,11 @@ from nltk.stem.porter import PorterStemmer
 st.title("Natural Language Processing with Streamlit")
 def sumy_summarize(docx):
     parser = PlaintextParser.from_string(docx,Tokenizer("english"))
-	lex_summarizer = LexRankSummarizer()
-	summary = lex_summarizer(parser.document,3)
-	summary_list = [str(sentence) for sentence in summary]
-	result = ' '.join(summary_list)
-	return result
+    lex_summarizer = LexRankSummarizer()
+    summary = lex_summarizer(parser.document,3)
+    summary_list = [str(sentence) for sentence in summary]
+    result = ' '.join(summary_list)
+    return result
     
 def pos_tagger(nltk_tag): 
     if nltk_tag.startswith('J'): 
