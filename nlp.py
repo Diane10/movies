@@ -78,13 +78,13 @@ if st.sidebar.checkbox("NLP"):
         if st.button("Analyse",key="4"):
             if selection == "Lemmatize":
                 wordnet_lemmatizer = WordNetLemmatizer()
-	            tokenization = nltk.word_tokenize(message)
+	        tokenization = nltk.word_tokenize(message)
                 for w in tokenization:
                     st.write("Lemma for {} is {}".format(w, wordnet_lemmatizer.lemmatize(w))) 
 	  
              elif selection == "PorterStemmer":
                 porter_stemmer  = PorterStemmer()
-	            tokenization = nltk.word_tokenize(message)
+	        tokenization = nltk.word_tokenize(message)
                 for w in tokenization:
                     st.write("Stemming for {} is {}".format(w,porter_stemmer.stem(w)))   
                 
