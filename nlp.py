@@ -17,7 +17,7 @@ from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
 from nltk.stem.porter import PorterStemmer
-
+#Nlp
 st.title("Natural Language Processing with Streamlit")
 def sumy_summarize(docx):
     parser = PlaintextParser.from_string(docx,Tokenizer("english"))
