@@ -106,7 +106,7 @@ if st.sidebar.checkbox("NLP"):
                 for w in tokenization:
                     st.write("Stemming for {} is {}".format(w,porter_stemmer.stem(w)))   
                 
-#    diane           
+         
     if st.checkbox("show text summarization"):
         if st.button("Analyse",key="7"):
             st.subheader("summarize your text")
