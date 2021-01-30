@@ -68,32 +68,32 @@ if st.sidebar.checkbox("NLP"):
             blob = TextBlob(message)
             st.write(blob.sentences)
     if st.checkbox("Tokenize sentence"): 
-        if st.button("Analyse"):
+        if st.button("Analyse",key="4"):
             list2 = nltk.word_tokenize(message) 
             st.write(list2) 
     if st.checkbox("POS tag "): 
-        if st.button("Analyse"):
+        if st.button("Analyse",key="5"):
             pos_tagged = nltk.pos_tag(nltk.word_tokenize(message))   
             st.write(pos_tagged) 
             
-    if st.checkbox("Removing stopword"): 
+#     if st.checkbox("Removing stopword"): 
 
-        if st.button("Analyse",key='13'):
-            stop_words=set(stopwords.words("english"))
-            word_tokens=word_tokenize(message)
-            filtered_sentence = [w for w in word_tokens if not w in stop_words]  
-            filtered_sentence = []  
-            for w in word_tokens:  
-                if w not in stop_words:  
-                    filtered_sentence.append(w)  
+#         if st.button("Analyse",key='13'):
+#             stop_words=set(stopwords.words("english"))
+#             word_tokens=word_tokenize(message)
+#             filtered_sentence = [w for w in word_tokens if not w in stop_words]  
+#             filtered_sentence = []  
+#             for w in word_tokens:  
+#                 if w not in stop_words:  
+#                     filtered_sentence.append(w)  
               
-            st.write(word_tokens)  
-            st.write(filtered_sentence)
+#             st.write(word_tokens)  
+#             st.write(filtered_sentence)
             
             
-    if st.checkbox("lemmatizer"):
+    if st.checkbox("Stemming and Lemmatization "):
         selection = st.selectbox("Select type:", ("Lemmatizer", "PorterStemmer"))
-        if st.button("Analyse",key="4"):
+        if st.button("Analyse",key="6"):
             if selection == "Lemmatizer":
                 tokenization=nltk.word_tokenize(message)
                 for w in tokenization:
@@ -109,13 +109,13 @@ if st.sidebar.checkbox("NLP"):
                 
               
     if st.checkbox("show text summarization"):
-        if st.button("Analyse",key="5"):
+        if st.button("Analyse",key="7"):
             st.subheader("summarize your text")
             summary_result= sumy_summarize(message)
             st.success(summary_result)
         
     if st.checkbox("splelling checker"):
-        if st.button("Analyse",key="6"):
+        if st.button("Analyse",key="8"):
             blob = TextBlob(message)
             st.write(blob.correct())
     if st.checkbox("language detector"):
@@ -124,7 +124,7 @@ if st.sidebar.checkbox("NLP"):
             st.write(blob.detect_language())
 
     if st.checkbox("Translate sentences"):
-        if st.button("Analyse"):
+        if st.button("Analyse",key="20"):
             selection = st.selectbox("Select language:", ("English", "Spanish","Chinese"))
             if selection == "English":
                 blob = TextBlob(message)
