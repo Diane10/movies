@@ -77,14 +77,15 @@ if st.sidebar.checkbox("NLP"):
         selection = st.selectbox("Select Analysis:", ("Lemmatizer", "PorterStemmer"))
         if st.button("Analyse",key="4"):
             if selection == "Lemmatize":
-                wordnet_lemmatizer = WordNetLemmatizer()
-	        tokenization = nltk.word_tokenize(message)
+                tokenization=nltk.word_tokenize(message)
                 for w in tokenization:
-                    st.write("Lemma for {} is {}".format(w, wordnet_lemmatizer.lemmatize(w))) 
+                    st.write("Lemma for {} is {}".format(w,wordnet_lemmatizer.lemmatize(w))) 
+                    wordnet_lemmatizer=WordNetLemmatizer()
+	                     
 	  
-             elif selection == "PorterStemmer":
-                porter_stemmer  = PorterStemmer()
-	        tokenization = nltk.word_tokenize(message)
+            elif selection == "PorterStemmer":
+                porter_stemmer=PorterStemmer()
+                tokenization=nltk.word_tokenize(message)
                 for w in tokenization:
                     st.write("Stemming for {} is {}".format(w,porter_stemmer.stem(w)))   
                 
@@ -104,6 +105,3 @@ if st.sidebar.checkbox("NLP"):
             blob = TextBlob(message)
             translated=blob.translate(to="de")
             st.write(translated)
-
-
-
