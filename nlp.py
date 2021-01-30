@@ -20,17 +20,17 @@ def sumy_summarize(docx):
     summary_list=[str(sentence) for sentence in summary]
     result=' '.join(summary_list)
     return result
-text =st.text_area("Enter text")
-blob = TextBlob(text)
+message =st.text_area("Enter text")
+blob = TextBlob(message)
 if st.sidebar.checkbox("NLP"):
     if st.checkbox('Noun phrases'):
         if st.button("Analyse"):
 #              text1 =st.text_area("Enter text")
-             blob = TextBlob(text)
+             blob = TextBlob(message)
              st.write(blob.noun_phrases)
     if st.checkbox("show sentiment analysis"):
-        st.subheader("analyse your text")
-        message=st.text_area("Enter your text")  
+#         st.subheader("analyse your text")
+#         message=st.text_area("Enter your text")  
         if st.button("Analyse"):
             blob = TextBlob(message)
             result_sentiment= blob.sentiment
@@ -38,28 +38,32 @@ if st.sidebar.checkbox("NLP"):
             polarity = blob.polarity
             subjectivity = blob.subjectivity
             st.write(polarity, subjectivity)
-    if st.checkbox("show words"):         
-        st.write (blob.words)
-    if st.checkbox("show sentence"):    
-        st.write(blob.sentences)
-#     if st.checkbox("lemmatizer"):
-#         st.write(Word(text1).lemmatize("v"))
-#         st.write(word1.lemmatize("v"))
+    if st.checkbox("show words"): 
+        if st.button("Analyse"):
+            st.write (message.words)
+    if st.checkbox("show sentence"): 
+        if st.button("Analyse"):
+            st.write(message.sentences)
+    if st.checkbox("lemmatizer"):
+        if st.button("Analyse"):
+            st.write(Word(message).lemmatize("v"))
+            st.write(message.lemmatize("v"))
     if st.checkbox("show text summarization"):
-        st.subheader("summarize your text")
-        message = st.text_area("Enter text ","Type here...")
-        st.text("using summy summarizer")
-        summary_result= sumy_summarize(message)
-        st.success(summary_result)
+        if st.button("Analyse"):
+            st.subheader("summarize your text")
+            message = st.text_area("Enter text ","Type here...")
+            st.text("using summy summarizer")
+            summary_result= sumy_summarize(message)
+            st.success(summary_result)
         
     if st.checkbox("splelling checker"):
-        word1= st.text_area('Enter number:')
-        blob = TextBlob(word1)
-        st.write(blob.correct())
+        if st.button("Analyse"):
+            blob = TextBlob(message)
+            st.write(blob.correct())
     if st.checkbox("Translate to German from English"):
-        word1= st.text_area('Enter number:')
-        blob = TextBlob(word1)
-        blob.translate(to="de")
+        if st.button("Analyse"):
+            blob = TextBlob(message)
+            blob.translate(to="de")
 
 
 
