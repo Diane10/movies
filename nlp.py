@@ -1,5 +1,3 @@
-
-
 import pandas as pd
 import numpy as np
 from textblob import Word
@@ -22,13 +20,14 @@ def sumy_summarize(docx):
     summary_list=[str(sentence) for sentence in summary]
     result=' '.join(summary_list)
     return result
-# text =st.text_area("Enter text")
-# blob = TextBlob(text)
+text =st.text_area("Enter text")
+blob = TextBlob(text)
 if st.sidebar.checkbox("NLP"):
     if st.checkbox('Noun phrases'):
-        text1 =st.text_area("Enter text")
-        blob = TextBlob(text1)
-        st.write(blob.noun_phrases)
+        if st.button("Analyse"):
+#              text1 =st.text_area("Enter text")
+             blob = TextBlob(text)
+             st.write(blob.noun_phrases)
     if st.checkbox("show sentiment analysis"):
         st.subheader("analyse your text")
         message=st.text_area("Enter your text")  
