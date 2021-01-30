@@ -43,7 +43,7 @@ if st.sidebar.checkbox("NLP"):
         st.write (blob.words)
     if st.checkbox("show sentence"):    
         st.write(blob.sentences)
-    if st.checkbox("lemmatizer"):
+#     if st.checkbox("lemmatizer"):
 #         st.write(Word(text1).lemmatize("v"))
 #         st.write(word1.lemmatize("v"))
     if st.checkbox("show text summarization"):
