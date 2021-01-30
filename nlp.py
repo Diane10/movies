@@ -62,20 +62,20 @@ if st.sidebar.checkbox("NLP"):
             blob = TextBlob(message)
             st.write (blob.words)
     if st.checkbox("show sentence"):
-        if st.button("Analyse"):
+        if st.button("Analyse",key="4"):
             blob = TextBlob(message)
             st.write(blob.sentences)
     if st.checkbox("Tokenize sentence"): 
-        if st.button("Analyse"):
+        if st.button("Analyse",,key="5"):
             list2 = nltk.word_tokenize(message) 
             st.write(list2) 
     if st.checkbox("POS tag "): 
-        if st.button("Analyse"):
+        if st.button("Analyse",,key="6"):
             pos_tagged = nltk.pos_tag(nltk.word_tokenize(message))   
             st.write(pos_tagged) 
     if st.checkbox("lemmatizer"):
         selection = st.selectbox("Select Analysis:", ("Lemmatizer", "PorterStemmer"))
-        if st.button("Analyse",key="4"):
+        if st.button("Analyse",key="7"):
             if selection == "Lemmatize":
                 tokenization=nltk.word_tokenize(message)
                 for w in tokenization:
@@ -91,17 +91,17 @@ if st.sidebar.checkbox("NLP"):
                 
               
     if st.checkbox("show text summarization"):
-        if st.button("Analyse",key="5"):
+        if st.button("Analyse",key="8"):
             st.subheader("summarize your text")
             summary_result= sumy_summarize(message)
             st.success(summary_result)
         
     if st.checkbox("splelling checker"):
-        if st.button("Analyse",key="6"):
+        if st.button("Analyse",key="9"):
             blob = TextBlob(message)
             st.write(blob.correct())
     if st.checkbox("Translate to German from English"):
-        if st.button("Analyse"):
+        if st.button("Analyse",key="10"):
             blob = TextBlob(message)
             translated=blob.translate(to="de")
             st.write(translated)
