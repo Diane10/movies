@@ -124,8 +124,9 @@ if st.sidebar.checkbox("NLP"):
             st.write(blob.detect_language())
 
     if st.checkbox("Translate sentences"):
+        selection = st.selectbox("Select language:", ("English", "Spanish","Chinese"))
+	
         if st.button("Analyse",key="20"):
-            selection = st.selectbox("Select language:", ("English", "Spanish","Chinese"))
             if selection == "English":
                 blob = TextBlob(message)
                 translated=blob.translate(to="en")
