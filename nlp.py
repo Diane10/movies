@@ -52,7 +52,7 @@ def pos_tagger(nltk_tag):
 if st.sidebar.checkbox("Market Basket Anlysis"):
     dataset = pd.read_csv('https://raw.githubusercontent.com/Diane10/movies/main/GroceryStoreDataSet.csv')
     dataset = list(dataset["Transaction"].apply(lambda x:x.split(',')))
-    st.write(dataset.head())
+    st.write(dataset)
     te = TransactionEncoder()
     te_data = te.fit(dataset).transform(dataset)
     df = pd.DataFrame(te_data,columns=te.columns_)
@@ -65,11 +65,11 @@ if st.sidebar.checkbox("Market Basket Anlysis"):
     st.write(freq_items.sort_values(by = "support" , ascending = False))
     
     rules = association_rules(freq_items, metric="lift", min_threshold=1)
-    st.write(rules.head())
+    st.write(rules)
     
     df1 = association_rules(freq_items, metric = "confidence", min_threshold = 0.02)
     
-    st.write(df1.head())
+    st.write(df1)
     
     st.write(df1[(df1.confidence > 0.8) & (df1.lift > 1)].sort_values(by="lift", ascending=False))    
     
