@@ -10,7 +10,6 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem import 	WordNetLemmatizer
 
-import tensorflow as st
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
