@@ -175,7 +175,7 @@ if st.sidebar.checkbox("NLP"):
                 blob = TextBlob(message)
                 translated=blob.translate(to='es')
                 st.write(translated)
-                
+#                 
             if selection == "Chinese":
                 blob = TextBlob(message)
                 translated=blob.translate(to="zh")
