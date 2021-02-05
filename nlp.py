@@ -29,7 +29,7 @@ from sumy.summarizers.lex_rank import LexRankSummarizer
 from nltk.stem.porter import PorterStemmer
 from nltk.stem import WordNetLemmatizer
 #Nlp
-st.title("Natural Language Processing with Streamlit")
+
 wordnet_lemmatizer=WordNetLemmatizer() 
 def sumy_summarize(docx):
     parser = PlaintextParser.from_string(docx,Tokenizer("english"))
@@ -52,6 +52,7 @@ def pos_tagger(nltk_tag):
         return None    
 
 if st.sidebar.checkbox("Market Basket Anlysis"):
+    st.title("Market Basket Anlysis with Streamlit")	
     dataset = pd.read_csv('https://raw.githubusercontent.com/Diane10/movies/main/GroceryStoreDataSet.csv')
     dataset = list(dataset["Transaction"].apply(lambda x:x.split(',')))
     st.write(dataset)
@@ -78,6 +79,7 @@ if st.sidebar.checkbox("Market Basket Anlysis"):
 message =st.text_area("Enter text")
 blob = TextBlob(message)
 if st.sidebar.checkbox("NLP"):
+    st.title("Natural Language Processing with Streamlit")	
     if st.checkbox('Noun phrases'):
         if st.button("Analyse",key="1"):
 #              text1 =st.text_area("Enter text")
