@@ -101,11 +101,11 @@ if st.sidebar.checkbox("NLP"):
             blob = TextBlob(message)
             st.write (blob.words)
     if st.checkbox("show sentence"):
-        if st.button("Analyse"):
+        if st.button("Analyse",key='30'):
             blob = TextBlob(message)
             st.write(blob.sentences)
     if st.checkbox("Tokenize sentence"): 
-        if st.button("Analyse"):
+        if st.button("Analyse",key='27'):
             list2 = nltk.word_tokenize(message) 
             st.write(list2) 
     if st.checkbox("POS tag "): 
