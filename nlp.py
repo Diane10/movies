@@ -106,7 +106,7 @@ if st.sidebar.checkbox("NLP"):
             list2 = nltk.word_tokenize(message) 
             st.write(list2) 
     if st.checkbox("POS tag "): 
-        if st.button("Analyse"):
+        if st.button("Analyse",key='20'):
             pos_tagged = nltk.pos_tag(nltk.word_tokenize(message))   
             st.write(pos_tagged) 
             
@@ -125,7 +125,7 @@ if st.sidebar.checkbox("NLP"):
             st.write(filtered_sentence)
             
            
-    if st.checkbox("lemmatizer"):
+    if st.checkbox("Text preprocessing"):
         selection = st.selectbox("Select type:", ("Lemmatizer", "PorterStemmer"))
         if st.button("Analyse",key="4"):
             if selection == "Lemmatizer":
