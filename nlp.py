@@ -27,8 +27,10 @@ from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
 from nltk.stem.porter import PorterStemmer
+from nltk.stem import WordNetLemmatizer
 #Nlp
 st.title("Natural Language Processing with Streamlit")
+wordnet_lemmatizer=WordNetLemmatizer() 
 def sumy_summarize(docx):
     parser = PlaintextParser.from_string(docx,Tokenizer("english"))
     lex_summarizer = LexRankSummarizer()
@@ -122,17 +124,18 @@ if st.sidebar.checkbox("NLP"):
             st.write(word_tokens)  
             st.write(filtered_sentence)
             
-            
+           
     if st.checkbox("lemmatizer"):
         selection = st.selectbox("Select type:", ("Lemmatizer", "PorterStemmer"))
         if st.button("Analyse",key="4"):
             if selection == "Lemmatizer":
-                wordnet_lemmatizer=WordNetLemmatizer()
+                
                 tokenization=nltk.word_tokenize(message)
+		
                 for w in tokenization:
+		     	
                     st.write("Lemma for {} is {}".format(w,wordnet_lemmatizer.lemmatize(w))) 
-                    wordnet_lemmatizer=WordNetLemmatizer()
-	                     
+                               
 	  
             elif selection == "PorterStemmer":
                 porter_stemmer=PorterStemmer()
