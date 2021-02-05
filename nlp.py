@@ -160,7 +160,7 @@ if st.sidebar.checkbox("NLP"):
             st.write(blob.detect_language())
 
     if st.checkbox("Translate sentences"):
-        if st.button("Analyse"):
+        if st.button("Analyse",key='23'):
             selection = st.selectbox("Select language:", ("French", "Spanish","Chinese"))
             if selection == "French":
                 blob = TextBlob(message)
