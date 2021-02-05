@@ -76,10 +76,11 @@ if st.sidebar.checkbox("Market Basket Anlysis"):
     
     st.write(df1[(df1.confidence > 0.8) & (df1.lift > 1)].sort_values(by="lift", ascending=False))    
     
-message =st.text_area("Enter text")
-blob = TextBlob(message)
+
 if st.sidebar.checkbox("NLP"):
-    st.title("Natural Language Processing with Streamlit")	
+    st.title("Natural Language Processing with Streamlit")
+    message =st.text_area("Enter text")
+    blob = TextBlob(message)
     if st.checkbox('Noun phrases'):
         if st.button("Analyse",key="1"):
 #              text1 =st.text_area("Enter text")
