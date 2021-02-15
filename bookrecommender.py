@@ -41,7 +41,7 @@ for i in range(ceil(len(all_genes)/subset_size)):
 
     model = MultiNet()
     model.fit(df, genes_to_impute=gene_subset)
-    imputed.append(model.predict(data))
+    imputed.append(model.predict(df))
 
 df = pd.concat(imputed, axis=1)
 if choice=='Home':
