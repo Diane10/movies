@@ -26,7 +26,19 @@ def get_recommendation(title,cosine_sim_mat,df,num_of_rec=5):
     idx=course_indices[title]
     sim_scores=list(enumerate(cosine_sim_mat[idx]))
     sim_scores= sorted(sim_scores,key=lambda x:x[1],reverse=True)
-    return sim_scores[1:]
+    selected_course_indices=[i[0] for i in sim_scores[1:]]
+    selected_course_score=[i[0] for i in sim_scores[1:]]
+    result_df= df.iloc[selected_course_indices]   
+    result_df['similarity score']=selected_course_score
+    final_recommeded= result_df['title','author','similarity score','image_url']
+    return final_recommeded
+
+@st.cache
+def search_term_if_not_found(term,df):
+    result_df= df[df['title'].str.contains(term)]
+    return result_df
+
+#css style
 
 st.title("Book Recommendation APP")
 menu= ["Home","Recommender","About"]
@@ -44,8 +56,24 @@ elif choice =="Recommender":
     num_of_rec= st.sidebar.number_input("Number",4,30,7)
     if st.button("Recommend"):
         if search_term is not None:
-            result= get_recommendation(search_term,cosine_sim_mat,df,num_of_rec)
-            st.write(result)
+            try:
+                result= get_recommendation(search_term,cosine_sim_mat,df,num_of_rec)
+                for row in results.iterrow():
+                    rec_title= row[1][0]
+                    rec_author= row[1][1]
+                    rec_score= row[1][2]
+                    rec_image= row[1][3]
+                    st.write("Title",rec_title)
+                    
+                    
+            except: 
+                st.warnings('Book Not Found')
+                st.info("suggested Option include")
+                result_df=search_term_if_not_found(search_term,df)
+                st.dataframe(result_df)
+            
+            
+                
 else:
     st.subheader("About US")
     
