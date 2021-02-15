@@ -4,9 +4,7 @@ Created on Mon Feb 15 16:26:01 2021
 
 @author: HP
 """
-from math import ceil
-import pandas as pd
-from deepimpute.multinet import MultiNet
+
 import streamlit as st
 #import streamlit.components.v1 as stc
 
@@ -34,18 +32,7 @@ st.title("Book Recommendation APP")
 menu= ["Home","Recommender","About"]
 choice=st.sidebar.selectbox("Menu",menu)
 df=load_data("https://raw.githubusercontent.com/sahilpocker/Book-Recommender-System/master/Dataset/books.csv")
-all_genes = df.columns.tolist()
-subset_size = 10000
-imputed = []
-
-for i in range(ceil(len(all_genes)/subset_size)):
-    gene_subset = all_genes[i*subset_size:(i+1)*subset_size]
-
-    model = MultiNet()
-    model.fit(df, genes_to_impute=gene_subset)
-    imputed.append(model.predict(df))
-
-df = pd.concat(imputed, axis=1)
+df=df[:200]
 if choice=='Home':
     st.subheader("Home")
     st.dataframe(df.head(10))
