@@ -4,7 +4,9 @@ Created on Mon Feb 15 16:26:01 2021
 
 @author: HP
 """
-
+from math import ceil
+import pandas as pd
+from deepimpute.multinet import MultiNet
 import streamlit as st
 #import streamlit.components.v1 as stc
 
