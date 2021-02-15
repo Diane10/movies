@@ -67,7 +67,7 @@ elif choice =="Recommender":
                     
                     
             except: 
-                st.warnings('Book Not Found')
+                st.warning('Book Not Found')
                 st.info("suggested Option include")
                 result_df=search_term_if_not_found(search_term,df)
                 st.dataframe(result_df)
