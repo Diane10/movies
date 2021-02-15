@@ -30,7 +30,7 @@ def get_recommendation(title,cosine_sim_mat,df,num_of_rec=5):
     selected_course_score=[i[0] for i in sim_scores[1:]]
     result_df= df.iloc[selected_course_indices]   
     result_df['similarity score']=selected_course_score
-    final_recommeded= result_df['title','authors','similarity score','image_url']
+    final_recommeded= result_df[['title','authors','similarity score','image_url']]
     return final_recommeded
 
 @st.cache
@@ -71,6 +71,14 @@ elif choice =="Recommender":
                 st.info("suggested Option include")
                 result_df=search_term_if_not_found(search_term,df)
                 st.dataframe(result_df)
+                result= get_recommendation(search_term,cosine_sim_mat,result_df,num_of_rec)
+                for row in result.iterrows():
+                    rec_title= row[1][0]
+                    rec_author= row[1][1]
+                    rec_score= row[1][2]
+                    rec_image= row[1][3]
+                    st.write("Title",rec_title)
+                    
             
             
                 
