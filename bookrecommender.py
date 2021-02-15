@@ -25,7 +25,7 @@ def get_recommendation(title,cosine_sim_mat,df,num_of_rec=5):
     course_indices=pd.Series(df.index,index=df['title']).drop_duplicates()
     idx=course_indices[title]
     sim_scores=list(enumerate(cosine_sim_mat[idx]))
-    sim_scores= sorted(sim_score,key=lambda x:x[1],reverse=True)
+    sim_scores= sorted(sim_scores,key=lambda x:x[1],reverse=True)
     return sim_scores[1:]
 
 st.title("Book Recommendation APP")
