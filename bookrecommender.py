@@ -71,13 +71,7 @@ elif choice =="Recommender":
                 st.info("suggested Option include")
                 result_df=search_term_if_not_found(search_term,df)
                 st.dataframe(result_df)
-                result= get_recommendation(search_term,cosine_sim_mat,result_df,num_of_rec)
-                for row in result.iterrows():
-                    rec_title= row[1][0]
-                    rec_author= row[1][1]
-                    rec_score= row[1][2]
-                    rec_image= row[1][3]
-                    st.write("Title",rec_title)
+                
                     
             
             
