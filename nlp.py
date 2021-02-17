@@ -30,8 +30,8 @@ def get_recommendation(title,cosine_sim_mat,df,num_of_rec=5):
     selected_course_score=[i[0] for i in sim_scores[1:]]
     result_df= df.iloc[selected_course_indices]   
     result_df['similarity score']=selected_course_score
-    final_recommeded= result_df['title','authors','similarity score','image_url']
-    return final_recommeded
+    final_recommeded= result_df[['title','authors','similarity score','image_url']]
+    return final_recommeded.head(num_of_rec)
 
 @st.cache
 def search_term_if_not_found(term,df):
