@@ -63,7 +63,21 @@ elif choice =="Recommender":
                     rec_author= row[1][1]
                     rec_score= row[1][2]
                     rec_image= row[1][3]
-                    st.write("Title",rec_title)
+                    c1,c2,c3 = st.beta_columns([1,2,1])
+                    with c1:
+                        with st.beta_expander("Title"):
+                            st.success(rec_title)
+                            
+                    with c2:
+                        with st.beta_expander("image"):
+                            st.image(rec_image,use_column_with=True) 
+                            
+                            
+                    with c1:
+                        with st.beta_expander("author"):
+                            st.success(rec_author)        
+
+#                     st.write("Title",rec_title)
                     
                     
             except: 
