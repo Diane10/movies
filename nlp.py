@@ -5,8 +5,7 @@ from textblob import TextBlob
 import nltk
 import nltk
 nltk.download('punkt')
-import streamlit as st
-import nltk
+import streamlit as stimport nltk
 from nltk.corpus import stopwords
 from nltk.stem import 	WordNetLemmatizer
 
