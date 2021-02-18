@@ -6,7 +6,7 @@ Created on Mon Feb 15 16:26:01 2021
 """
 
 import streamlit as st
-import streamlit.components.v1 as stc
+# import streamlit.components.v1 as stc
 
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
@@ -90,7 +90,7 @@ elif choice =="Recommender":
 #                             st.success(rec_author)        
 
                     st.write("Title",rec_title,"author",rec_author)
-                    stc.html(RESULT_TEMP.format(rec_image,rec_title,rec_author))
+                    st.markdown(RESULT_TEMP.format(rec_image,rec_title,rec_author),unsafe_allow_html=True)
                  
     
                     
