@@ -78,6 +78,9 @@ elif choice =="Recommender":
 #                             st.success(rec_author)        
 
                     st.write("Title",rec_title)
+                    st.write("Title",rec_author)                       
+                    st.image("Title",rec_image)                    
+    
                     
                     
             except: 
