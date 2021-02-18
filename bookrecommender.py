@@ -89,7 +89,7 @@ elif choice =="Recommender":
 #                         with st.beta_expander("author"):
 #                             st.success(rec_author)        
 
-                    st.write("Title",rec_title,"author",rec_author)
+#                     st.write("Title",rec_title,"author",rec_author)
                     st.markdown(RESULT_TEMP.format(rec_image,rec_title,rec_author),unsafe_allow_html=True)
                  
     
