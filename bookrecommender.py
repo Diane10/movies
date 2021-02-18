@@ -77,9 +77,8 @@ elif choice =="Recommender":
 #                         with st.beta_expander("author"):
 #                             st.success(rec_author)        
 
-                    st.write("Title",rec_title)
-                    st.write("Title",rec_author)                       
-                    st.image("Title",rec_image)                    
+                    st.write("Title",rec_title,"author",rec_author)
+                                     
     
                     
                     
