@@ -43,8 +43,8 @@ def search_term_if_not_found(term,df):
 RESULT_TEMP=""" 
 
 <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;">
-  <img src={} alt="Avatar" style="width:100%">
+  transition: 0.3s; display:flex;">
+  <img src={} alt="Avatar" style="width:300px">
   <div class="container" style="padding: 2px 16px;">
     <h4><b>{}</b></h4>
     <p>{}</p>
