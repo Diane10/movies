@@ -6,7 +6,7 @@ Created on Mon Feb 15 16:26:01 2021
 """
 
 import streamlit as st
-#import streamlit.components.v1 as stc
+import streamlit.components.v1 as stc
 
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
@@ -40,6 +40,18 @@ def search_term_if_not_found(term,df):
 
 #css style
 
+RESULT_TEMP=""" 
+
+<div class="card" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;">
+  <img src={} alt="Avatar" style="width:100%">
+  <div class="container" style="padding: 2px 16px;">
+    <h4><b>{}</b></h4>
+    <p>{}</p>
+  </div>
+</div>
+
+"""
 st.title("Book Recommendation APP")
 menu= ["Home","Recommender","About"]
 choice=st.sidebar.selectbox("Menu",menu)
@@ -78,7 +90,8 @@ elif choice =="Recommender":
 #                             st.success(rec_author)        
 
                     st.write("Title",rec_title,"author",rec_author)
-                                     
+                    stc.html(RESULT_TEMP.format(rec_image,rec_title,rec_author)
+                 
     
                     
                     
