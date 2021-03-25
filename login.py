@@ -57,10 +57,7 @@ def main():
 
 	if choice == "Home":
 		st.subheader("Home")
-	        st.image("https://i.pinimg.com/originals/af/21/0f/af210fbb1e24644723dbe71312595034.jpg", use_column_width=True)
-
-
-
+		st.image("https://i.pinimg.com/originals/af/21/0f/af210fbb1e24644723dbe71312595034.jpg",use_column_width=True)
 	elif choice == "Login":
 		st.subheader("Login Section")
 
