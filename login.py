@@ -40,16 +40,7 @@ def main():
 	"""Simple Login App"""
 
 	st.title("Simple Login App")
-	#streamlit page settings
-	st.set_page_config(layout="wide")
-	page_bg_img = '''
-	<style>
-	body {
-	background-image: url("https://oldschoolgrappling.com/wp-content/uploads/2018/08/Background-opera-speeddials-community-web-simple-backgrounds.jpg");
-	background-size: cover;
-	}
-	</style>
-	'''
+	
 
 
 	menu = ["Home","Login","SignUp"]
