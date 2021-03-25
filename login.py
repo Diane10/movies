@@ -46,6 +46,7 @@ def main():
 
 	if choice == "Home":
 		st.subheader("Home")
+		st.image("https://www.google.com/url?sa=i&url=https%3A%2F%2Fcio-wiki.org%2Fwiki%2FMachine_Learning&psig=AOvVaw2eZEKGGe2kuq9GDnyH3d_A&ust=1616775716408000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIicqZXty-8CFQAAAAAdAAAAABAD")
 
 	elif choice == "Login":
 		st.subheader("Login Section")
