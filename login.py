@@ -40,13 +40,27 @@ def main():
 	"""Simple Login App"""
 
 	st.title("Simple Login App")
+	#streamlit page settings
+	st.set_page_config(layout="wide")
+	page_bg_img = '''
+	<style>
+	body {
+	background-image: url("https://oldschoolgrappling.com/wp-content/uploads/2018/08/Background-opera-speeddials-community-web-simple-backgrounds.jpg");
+	background-size: cover;
+	}
+	</style>
+	'''
+
 
 	menu = ["Home","Login","SignUp"]
 	choice = st.sidebar.selectbox("Menu",menu)
 
 	if choice == "Home":
 		st.subheader("Home")
-		st.image("https://www.google.com/url?sa=i&url=https%3A%2F%2Fcio-wiki.org%2Fwiki%2FMachine_Learning&psig=AOvVaw2eZEKGGe2kuq9GDnyH3d_A&ust=1616775716408000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIicqZXty-8CFQAAAAAdAAAAABAD")
+	        st.markdown(page_bg_img, unsafe_allow_html=True)
+	        st.image("https://i.pinimg.com/originals/af/21/0f/af210fbb1e24644723dbe71312595034.jpg", use_column_width=True)
+
+
 
 	elif choice == "Login":
 		st.subheader("Login Section")
