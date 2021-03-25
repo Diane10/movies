@@ -48,10 +48,10 @@ def main():
 
 	if choice == "Home":
 		st.subheader("Home")
-		st.image("https://i.pinimg.com/originals/af/21/0f/af210fbb1e24644723dbe71312595034.jpg",use_column_width=True)
+		st.image("https://hackernoon.com/hn-images/1*oU3LAye3LxFcHg0UePmbSA.png",use_column_width=True)
 	elif choice == "Login":
 		st.subheader("Login Section")
-
+                st.image("https://verzeo.com/new/images/newblogs/ml01.png",use_column_width=True)
 		username = st.sidebar.text_input("User Name")
 		password = st.sidebar.text_input("Password",type='password')
 		if st.sidebar.checkbox("Login"):
